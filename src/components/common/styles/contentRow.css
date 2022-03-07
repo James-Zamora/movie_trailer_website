@@ -1,0 +1,57 @@
+.content-row {
+    margin: 55px 0;
+}
+
+.content-row .cards {
+    display: flex;
+    margin-top: 15px;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overscroll-behavior: contain;
+}
+
+.content-row .cards:active {
+    cursor: grabbing;
+}
+
+.content-row .cards .card {
+    margin-right: 15px;
+    margin-bottom: 10px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.content-row .title h3 {
+    font-size: 1.5rem;
+}
+
+.content-row .cards .card:last-of-type {
+    margin-right: 0px;
+}
+
+.content-row .card img {
+    width: 250px;
+    height: 350px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.content-row .cards::-webkit-scrollbar {
+    width: 1px;
+}
+
+.content-row .cards::-webkit-scrollbar-track {
+    background: #000000;
+    width: 1px;
+}
+
+.content-row .cards::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 2px solid #222;
+}

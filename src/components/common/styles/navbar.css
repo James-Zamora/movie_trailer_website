@@ -1,0 +1,18 @@
+nav {
+    background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.75) 50%);
+    height: 100px;
+    position: relative;
+    z-index: 10;
+}
+
+nav .logo svg {
+    width: 10rem;
+    fill: #e50914;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
