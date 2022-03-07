@@ -11,14 +11,9 @@
     overscroll-behavior: contain;
 }
 
-.content-row .cards:active {
-    cursor: grabbing;
-}
-
 .content-row .cards .card {
     margin-right: 15px;
     margin-bottom: 10px;
-    pointer-events: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -39,6 +34,7 @@
     height: 350px;
     border-radius: 5px;
     object-fit: cover;
+    box-shadow: 0 2px 5px 0 #222222;
 }
 
 .content-row .cards::-webkit-scrollbar {

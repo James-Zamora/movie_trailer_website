@@ -1,0 +1,92 @@
+.player-view {
+    flex-grow: 1;
+    height: 700px;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.player-view .placeholder {
+    border-radius: 5px;
+    background-color: #222222;
+    box-shadow: 0 2px 5px 0 #222222;
+    width: 100%;
+    margin-bottom: 30px;
+    height: 500px;
+}
+
+.view-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-info .details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-top: 15px;
+}
+
+.view-info h2 {
+    font-size: 1rem;
+    margin-top: 15px;
+    text-align: right;
+    opacity: 85%;
+}
+
+.view-info .details h3 {
+    font-size: 1rem;
+    opacity: 75%;
+}
+
+.view-info h3:nth-of-type(2) {
+    border: 2px solid #ffffffbf;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.view-info .details span {
+    height: 20px;
+    width: 2px;
+    margin: 0 10px;
+    background: #ffffffbf;
+}
+
+.view-info h1 {
+    font-size: 3rem;
+    margin: 25px 0;
+}
+
+.view-info p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    max-height: 175px;
+    overflow: hidden;
+}
+
+@media (max-width: 1050px) {
+    .player-view {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 678px) {
+    .view-info h1 {
+        font-size: 1.5rem;
+        max-width: 150px;
+    }
+    .view-info h2 {
+        font-size: 0.8rem;
+        opacity: 75%;
+    }
+
+    .view-info .details {
+        justify-content: end;
+    }
+
+    .view-info .details h3 {
+        font-size: 0.8rem;
+        opacity: 75%;
+    }
+}

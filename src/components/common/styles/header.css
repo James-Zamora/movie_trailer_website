@@ -41,6 +41,7 @@ header .container {
 }
 
 header .container h1,
+header .container .info,
 header .container .actions,
 header .container p {
     /* margin: 0 auto; */
@@ -51,23 +52,28 @@ header .container h1 {
     font-size: 4rem;
 }
 
-header .actions {
+header .container .info {
     display: flex;
     flex-wrap: wrap;
-}
-
-header .actions .btn {
-    margin: 15px 0;
-    width: 150px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
     align-items: center;
 }
 
-header .actions .btn:nth-of-type(1) {
-    margin-right: 10px;
+header .container .info h3 {
+    opacity: 75%;
+    margin: 10px 0;
+}
+
+header .container .info h3:nth-of-type(2) {
+    border: 2px solid #ffffffbf;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+header .container .info span {
+    height: 30px;
+    width: 2px;
+    margin: 0 10px;
+    background: #ffffffbf;
 }
 
 header .container p {
@@ -84,19 +90,16 @@ header .container p {
         font-size: 2.5rem;
     }
 
-    header .actions {
-        justify-content: center;
-        flex-flow: column;
-        align-items: center;
+    header .container p {
+        font-size: 0.95rem;
     }
 
-    header .actions .btn {
-        margin: 5px 0;
-        
+    header .container .info {
+        justify-content: center;
     }
-    
-    header .actions .btn:nth-of-type(1) {
-        margin-right: 0;
+
+    header .container .info h3 {
+        font-size: 1rem;
     }
 
 }

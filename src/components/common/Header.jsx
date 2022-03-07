@@ -11,8 +11,17 @@ const Header = () => {
                 <h1>
                     Black Mirror
                 </h1>
+                <div className="info">
+                    <h3>2021</h3>
+                    <span></span>
+                    <h3>18+</h3>
+                    <span></span>
+                    <h3>Season 1</h3>
+                    <span></span>
+                    <h3>TV Drama</h3>
+                </div>
                 <div className="actions">
-                    <div className="btn btn-dark">Play</div>
+                    <div className="btn btn-danger">Play</div>
                     <div className="btn btn-dark">My List</div>
                 </div>
                 <p>

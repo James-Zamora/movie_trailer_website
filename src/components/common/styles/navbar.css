@@ -12,7 +12,14 @@ nav .logo svg {
 
 nav .container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+}
+
+@media (max-width: 478px) {
+    nav .logo svg {
+        width: 5rem;
+    }
 }

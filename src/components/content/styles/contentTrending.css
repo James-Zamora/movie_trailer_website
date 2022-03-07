@@ -1,0 +1,87 @@
+.content-trending {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    border-radius: 5px;
+    padding: 30px 40px;
+    box-shadow: 0 2px 5px 0 #222222;
+    overflow: hidden;
+}
+
+.content-trending .info {
+    max-width: 500px;
+}
+
+.content-trending .info h6 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.content-trending .info .details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.content-trending .info .details h2 {
+    font-size: 1.3rem;
+    margin-right: 15px;
+}
+
+.content-trending .info .details h3 {
+    font-size: 1rem;
+    opacity: 75%;
+}
+
+.content-trending .info .details h3:nth-of-type(2) {
+    border: 2px solid #ffffffbf;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.content-trending .info .details span {
+    height: 20px;
+    width: 2px;
+    margin: 0 10px;
+    background: #ffffffbf;
+}
+
+.content-trending .info h1 {
+    font-size: 3rem;
+    margin: 25px 0;
+}
+
+.content-trending .info p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    max-height: 175px;
+    overflow: hidden;
+}
+
+@media (max-width: 508px) {
+
+    .content-trending {
+        height: 550px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .content-trending .info .details {
+        justify-content: center;
+    }
+
+    .content-trending .info h1 {
+        font-size: 2rem;
+        margin: 25px 0;
+    }
+    
+    .content-trending .info p {
+        font-size: 0.85rem;
+    }
+
+}

@@ -1,0 +1,13 @@
+.view-page {
+    display: flex;
+    flex-direction: row;
+    min-height: 1000px;
+    padding-bottom: 35px;
+}
+
+@media (max-width: 1050px) {
+    .view-page {
+        display: flex;
+        flex-direction: column;
+    }
+}
