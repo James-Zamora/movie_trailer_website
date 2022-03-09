@@ -4,8 +4,8 @@
     border-radius: 5px;
     background-color: #181818;
     position: absolute;
-    pointer-events: none;
-    z-index: 2019;
+    /* pointer-events: none; */
+    z-index: -1;
     opacity: 0;
     transform: scale(0.80);
     transition-property: opacity, transform;
@@ -19,13 +19,32 @@
 .preview[active] {
     opacity: 1;
     transform: scale(1);
+    z-index: 2019;
 }
 
 .preview .video {
     width: 100%;
     height: 350px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: #0e0e0e;
+}
+
+.preview .btn-close {
+    background: transparent;
+    padding: 15px 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 2px solid #222222;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.preview .btn-close:hover {
+    background: #222222;
 }
 
 .preview .details {
@@ -35,6 +54,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .preview .details h3 {
@@ -50,6 +71,7 @@
 @media (max-width: 478px) {
     .preview {
         height: 400px;
-        width: 300px;
+        width: 90%;
+        margin: 0 auto;
     }
 }

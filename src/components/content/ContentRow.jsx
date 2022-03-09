@@ -23,23 +23,19 @@ const ContentRow = ({ title, items, preview, setItem }) => {
         const offsetLeft = e.currentTarget.getBoundingClientRect().left - previewHeight
         
         setDelayHandler(setTimeout(() => {
-            console.log(setItem)
             setItem(item)
             preview.current.style.top = `${offsetTop}px`
             window.innerWidth <= 786 ? 
-                (
-                    preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
-                )
+                preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
             : 
                 preview.current.style.left = `${offsetLeft}px`
             preview.current.setAttribute('active', '')
-        }, 1000))
+        }, window.innerWidth <= 786 ? 100 : 1000))
 
     }
 
     const onMouseLeavePreview = (e) => {
         clearTimeout(delayHandler)
-        preview.current.removeAttribute('active')
     }
 
     return (
@@ -58,13 +54,19 @@ const ContentRow = ({ title, items, preview, setItem }) => {
                                 <div 
                                     onMouseEnter={(e) => onMouseEnterPreview(e, item)}
                                     onMouseLeave={onMouseLeavePreview}
+                                    on
                                     key={`cards-${title}-${index}`} 
                                     className="card"
-                                    data-id={index}
                                 >
-                                    <Link to={`/watch/${item.title}`}>
-                                        <img src={item.img} alt="" />
-                                    </Link>
+                                    {window.innerWidth <= 786 ?
+                                        <div>
+                                            <img src={item.img} alt="" />
+                                        </div>
+                                    :
+                                        <Link to={`/watch/${item.title}`}>
+                                            <img src={item.img} alt="" />
+                                        </Link>
+                                    }
                                 </div>
                             )
                         })}

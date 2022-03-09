@@ -5,7 +5,7 @@ import Preview from './content/Preview'
 import ContentRow from './content/ContentRow'
 import ContentTrending from './content/ContentTrending'
 import PlayerView from './content/PlayerView'
-import ContentColumn from './content/ContentColumn'
+import ContentGrid from './content/ContentGrid'
 
 export {
     Header,
@@ -15,5 +15,5 @@ export {
     ContentRow,
     ContentTrending,
     PlayerView,
-    ContentColumn,
+    ContentGrid,
 }

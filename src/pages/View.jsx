@@ -1,16 +1,20 @@
-import { useRef, useState } from 'react'
-import { PlayerView, ContentColumn, Preview } from '../components'
+import { useRef, useState, useEffect } from 'react'
+import { PlayerView, ContentGrid, Preview } from '../components'
 import './styles/view.css'
 
 const View = () => {
     const preview = useRef()
     const [item, setItem] = useState()
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div className="container">
             <div className="view-page">
                 <PlayerView item={items[0]} />
-                <ContentColumn items={items} preview={preview} setItem={setItem} />
+                <ContentGrid items={items} preview={preview} setItem={setItem} />
                 <Preview preview={preview} item={item} />
             </div>
         </div>

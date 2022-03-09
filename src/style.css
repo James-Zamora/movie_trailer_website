@@ -12,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    user-select: none;
+}
+
+
 .container {
     max-width: 1450px;
     margin: 0 auto;
@@ -27,6 +32,7 @@ body {
     background-color: #ffffff;
     cursor: pointer;
     transition: .3s;
+    user-select: none;
 }
 
 .btn:hover {

@@ -19,6 +19,11 @@
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    transition: .3s;
+}
+
+.content-row .card:hover {
+    opacity: 75%;
 }
 
 .content-row .title h3 {

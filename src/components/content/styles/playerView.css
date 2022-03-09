@@ -1,8 +1,9 @@
 .player-view {
-    flex-grow: 1;
-    height: 700px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     padding-top: 15px;
-    padding-right: 15px;
+    padding-bottom: 150px;
 }
 
 .player-view .placeholder {
@@ -65,24 +66,20 @@
     overflow: hidden;
 }
 
-@media (max-width: 1050px) {
-    .player-view {
-        padding-right: 0;
-    }
-}
-
 @media (max-width: 678px) {
+
+    .view-info {
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .view-info h1 {
-        font-size: 1.5rem;
-        max-width: 150px;
+        font-size: 2rem;
     }
     .view-info h2 {
         font-size: 0.8rem;
         opacity: 75%;
-    }
-
-    .view-info .details {
-        justify-content: end;
+        text-align: center;
     }
 
     .view-info .details h3 {
