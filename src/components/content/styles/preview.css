@@ -28,10 +28,25 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: #0e0e0e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.preview iframe {
+    width: 100%;
+    height: 350px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+}
+
+.preview iframe .video-player-frame {
+    width: 100%!important;
 }
 
 .preview .btn-close {
-    background: transparent;
+    background: #222222cb;
     padding: 15px 20px;
     border-radius: 5px;
     position: absolute;

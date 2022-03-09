@@ -9,6 +9,9 @@
     padding: 30px 40px;
     box-shadow: 0 2px 5px 0 #222222;
     overflow: hidden;
+    background-repeat: no-repeat!important;
+    background-position: top!important;
+    background-size: cover!important;
 }
 
 .content-trending .info {

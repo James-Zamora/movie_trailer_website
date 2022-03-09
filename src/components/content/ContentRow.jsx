@@ -29,7 +29,7 @@ const ContentRow = ({ title, items, preview, setItem }) => {
                 preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
             : 
                 preview.current.style.left = `${offsetLeft}px`
-            preview.current.setAttribute('active', '')
+            preview.current.setAttribute('active', 'true')
         }, window.innerWidth <= 786 ? 100 : 1000))
 
     }
@@ -39,7 +39,6 @@ const ContentRow = ({ title, items, preview, setItem }) => {
     }
 
     return (
-        <>
             <section className="content-row">
                 <div className="container">
                     <div className="title">
@@ -49,31 +48,35 @@ const ContentRow = ({ title, items, preview, setItem }) => {
                         ref={contentRow}
                         onWheel={onWheel}
                     >
-                        {items.map((item, index) => {
-                            return (
-                                <div 
-                                    onMouseEnter={(e) => onMouseEnterPreview(e, item)}
-                                    onMouseLeave={onMouseLeavePreview}
-                                    on
-                                    key={`cards-${title}-${index}`} 
-                                    className="card"
-                                >
-                                    {window.innerWidth <= 786 ?
-                                        <div>
-                                            <img src={item.img} alt="" />
+                        {items && items.length !== 0 ?
+                            <>
+                                {items.map((item, index) => {
+                                    return (
+                                        <div 
+                                            onMouseEnter={(e) => onMouseEnterPreview(e, item)}
+                                            onMouseLeave={onMouseLeavePreview}
+                                            key={`cards-${title}-${index}`} 
+                                            className="card"
+                                        >
+                                            {window.innerWidth <= 786 ?
+                                                <div>
+                                                    <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
+                                                </div>
+                                            :
+                                                <Link to={`/watch/${item.id}`}>
+                                                    <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
+                                                </Link>
+                                            }
                                         </div>
-                                    :
-                                        <Link to={`/watch/${item.title}`}>
-                                            <img src={item.img} alt="" />
-                                        </Link>
-                                    }
-                                </div>
-                            )
-                        })}
+                                    )
+                                })}
+                            </>
+                        :
+                            <h4>Loading. . .</h4>
+                        }
                     </div>
                 </div>
             </section>
-        </>
     )
 }
 

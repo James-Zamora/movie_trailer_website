@@ -1,12 +1,14 @@
 import './styles/contentTrending.css'
 
-const ContentTrending = () => {
+const ContentTrending = ({item}) => {
     return (
+        <>
+        {item &&
         <section>
             <div className="container">
                 <div className="content-trending"
                     style={{
-                        background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg')"
+                        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${item.poster_path != '' ? 'https://image.tmdb.org/t/p/w1280'+item.poster_path : "https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg"})`
                     }}
                 >
                     <div className="info">
@@ -33,6 +35,8 @@ const ContentTrending = () => {
                 </div>
             </div>
         </section>
+        }
+        </>
     )
 }
 
