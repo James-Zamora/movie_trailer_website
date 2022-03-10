@@ -18,6 +18,10 @@ header .img-wrapper img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: flex;
+    max-width: 1450px;
+    object-position: top;
+    margin: 0 auto;
 }
 
 header .img-wrapper .concord-img-gradient {
@@ -27,7 +31,7 @@ header .img-wrapper .concord-img-gradient {
     left: 0;
     position: absolute;
     background: rgba(0,0,0,.4);
-    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
 }
 
 header .container {
@@ -63,7 +67,7 @@ header .container .info h3 {
     margin: 10px 0;
 }
 
-header .container .info h3:nth-of-type(2) {
+header .container .info h3.is-edult {
     border: 2px solid #ffffffbf;
     border-radius: 5px;
     padding: 2px 5px;

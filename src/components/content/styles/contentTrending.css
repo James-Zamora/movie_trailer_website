@@ -41,7 +41,7 @@
     opacity: 75%;
 }
 
-.content-trending .info .details h3:nth-of-type(2) {
+.content-trending .info .details h3.is-edult {
     border: 2px solid #ffffffbf;
     border-radius: 5px;
     padding: 2px 5px;

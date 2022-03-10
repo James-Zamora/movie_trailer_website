@@ -12,21 +12,24 @@ const ContentTrending = ({item}) => {
                     }}
                 >
                     <div className="info">
-                        <h6>
-                            Duration: 2h 08m
-                        </h6>
+                            {item.release_date ? 
+                                <h6>{item.release_date.slice(0,3)}</h6>
+                            :
+                                <h6>{item.first_air_date}</h6>
+                            }
                         <div className="details">
-                            <h2>⭐8.3</h2>
-                            <h3>2021</h3>
-                            <span></span>
-                            <h3>18+</h3>
-                            <span></span>
-                            <h3>Season 1</h3>
-                            <span></span>
-                            <h3>TV Drama</h3>
+                            <h2>⭐{item.vote_average}</h2>
+                            {item.adult &&
+                                <>
+                                    <span></span>
+                                    <h3 className="is-edult">18+</h3>
+                                </>
+                            }
+                            {/* <span></span> */}
+                            {/* <h3>{item.media_type.slice(0,1).toUpperCase() + item.media_type.slice(1) }</h3> */}
                         </div>
-                        <h1>Black Mirror</h1>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut animi quas eaque sint debitis, illum, placeat fugit laudantium qui libero voluptatibus voluptatem reiciendis excepturi architecto ad vitae voluptate nam consectetur quo ut nesciunt autem temporibus. Suscipit id possimus sint debitis!</p>
+                        <h1>{item.original_name}</h1>
+                        <p>{item.overview}</p>
                         <div className="actions">
                             <div className="btn btn-danger">Watch</div>
                             <div className="btn btn-dark">My List</div>

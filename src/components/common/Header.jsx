@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './styles/header.css'
 
 const Header = ({ item }) => {
@@ -15,15 +16,19 @@ const Header = ({ item }) => {
                     </h1>
                     <div className="info">
                         <h3>{item.release_date}</h3>
+                        {item.adult &&
+                            <>
+                                <span></span>
+                                <h3 className="is-edult">18+</h3>
+                            </>
+                        }
                         <span></span>
-                        <h3>18+</h3>
+                        <h3>{item.media_type.slice(0,1).toUpperCase() + item.media_type.slice(1) }</h3>
                         <span></span>
-                        <h3>Season 1</h3>
-                        <span></span>
-                        <h3>TV Drama</h3>
+                        <h3>⭐{item.vote_average}</h3>
                     </div>
                     <div className="actions">
-                        <div className="btn btn-danger">Play</div>
+                        <Link to={`/watch/${item && item.id}`} className="btn btn-danger">Play</Link>
                         <div className="btn btn-dark">My List</div>
                     </div>
                     <p>

@@ -1,127 +1,36 @@
 import { useRef, useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { PlayerView, ContentGrid, Preview } from '../components'
+import { getMovieVideos, getMovieById } from '../actions/movie'
 import './styles/view.css'
 
 const View = () => {
     const preview = useRef()
+    const params = useParams()
+
     const [item, setItem] = useState()
+    const [movie, setMovie] = useState(null)
+    const [trailer, setTrailer] = useState(null)
+    const [trailers, setTrailers] = useState(null)
 
     useEffect(() => {
         window.scrollTo(0, 0)
+        getMovieVideos(params.id).then(res => { setTrailers(res); setTrailer(res[0]) })
+        getMovieById(params.id).then(res => { setMovie(res) })
+        console.log(movie)
+
     }, [])
 
     return (
         <div className="container">
             <div className="view-page">
-                <PlayerView item={items[0]} />
-                <ContentGrid items={items} preview={preview} setItem={setItem} />
-                <Preview preview={preview} item={item} />
+                <PlayerView trailer={trailer} movie={movie} />
+                {/* <ContentGrid items={items} preview={preview} setItem={setItem} /> */}
+                {/* <Preview preview={preview} item={item} /> */}
             </div>
         </div>
     )
     
 }
 
-const items = [
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    },
-    {
-        img: 'https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg',
-        title: 'Black Mirror',
-        views: '2222',
-        length: '1h 20m',
-        rating: '4.6',
-        age: '18+',
-        year: '2021',
-        genre: 'TV Drama',
-    }
-]
 export default View

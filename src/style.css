@@ -33,6 +33,7 @@ img {
     cursor: pointer;
     transition: .3s;
     user-select: none;
+    text-decoration: none;
 }
 
 .btn:hover {
