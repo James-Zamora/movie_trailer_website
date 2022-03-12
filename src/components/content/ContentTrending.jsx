@@ -1,19 +1,31 @@
+import { Link } from 'react-router-dom'
+import { useRef } from 'react'
 import './styles/contentTrending.css'
 
 const ContentTrending = ({item}) => {
+
+    const bgImage = useRef()
+    
+    window.addEventListener('scroll', () => {
+        if(bgImage.current) {
+            let scrolled = bgImage.current.offsetParent.parentElement.getBoundingClientRect().bottom - bgImage.current.clientHeight;
+            bgImage.current.style.transform = `translateY(${(scrolled * 0.1 )}px)`
+        }
+    });
+
     return (
         <>
         {item &&
         <section>
             <div className="container">
-                <div className="content-trending"
-                    style={{
-                        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( ${item.poster_path != '' ? 'https://image.tmdb.org/t/p/w1280'+item.poster_path : "https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg"})`
-                    }}
-                >
+                <div className="content-trending">
+                    <div className="img-wrapper">
+                        <img ref={bgImage} src={item.poster_path != '' ? 'https://image.tmdb.org/t/p/w1280'+item.poster_path : "https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg"} alt="" />
+                        <div className="concord-img-gradient"></div>
+                    </div>
                     <div className="info">
                             {item.release_date ? 
-                                <h6>{item.release_date.slice(0,3)}</h6>
+                                <h6>{item.release_date}</h6>
                             :
                                 <h6>{item.first_air_date}</h6>
                             }
@@ -28,10 +40,10 @@ const ContentTrending = ({item}) => {
                             {/* <span></span> */}
                             {/* <h3>{item.media_type.slice(0,1).toUpperCase() + item.media_type.slice(1) }</h3> */}
                         </div>
-                        <h1>{item.original_name}</h1>
+                        {item && <h1>{ item.original_title ? item.original_title : item.name}</h1>}
                         <p>{item.overview}</p>
                         <div className="actions">
-                            <div className="btn btn-danger">Watch</div>
+                            <Link to={`/watch/${item && item.media_type}/${item && item.id}`} className="btn btn-danger">Watch</Link>
                             <div className="btn btn-dark">My List</div>
                         </div>
                     </div>

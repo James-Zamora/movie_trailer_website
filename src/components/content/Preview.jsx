@@ -10,8 +10,8 @@ const Preview = ({ item, preview }) => {
 
     useEffect(() => {
         if(item) {
-            getMovieVideos(item.id).then(res => setTrailer(res[0].key))
-            console.log(item)
+            setTrailer(null)
+            getMovieVideos(item.id, item.media_type).then(res => setTrailer(res[0].key))
         }
     }, [item])
 
@@ -46,9 +46,9 @@ const Preview = ({ item, preview }) => {
                     playerRef.current.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
                 }}
             >Close</div>
-            <Link to={`/watch/${item && item.id}`} className="details">
-                <h3>{item && item.original_title}</h3>
-                <p>{item && item.release_date }</p>
+            <Link to={`/watch/${item && item.media_type}/${item && item.id}`} className="details">
+                {item && <h3>{ item.original_title ? item.original_title : item.name}</h3>}
+                {item &&<p> { item.release_date ? item.release_date : 'First Air Date: ' + item.first_air_date }</p> }
                 <p>⭐{item && item.vote_average} | Votes: {item && item.vote_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
             </Link>
         </div>

@@ -24,12 +24,14 @@ const ContentRow = ({ title, items, preview, setItem }) => {
         
         setDelayHandler(setTimeout(() => {
             setItem(item)
-            preview.current.style.top = `${offsetTop}px`
-            window.innerWidth <= 786 ? 
-                preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
-            : 
-                preview.current.style.left = `${offsetLeft}px`
-            preview.current.setAttribute('active', 'true')
+            if(preview.current)  {
+                preview.current.style.top = `${offsetTop}px`
+                window.innerWidth <= 786 ? 
+                    preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
+                : 
+                    preview.current.style.left = `${offsetLeft}px`
+                preview.current.setAttribute('active', 'true')
+            }
         }, window.innerWidth <= 786 ? 100 : 1000))
 
     }
@@ -63,7 +65,7 @@ const ContentRow = ({ title, items, preview, setItem }) => {
                                                     <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
                                                 </div>
                                             :
-                                                <Link to={`/watch/${item.id}`}>
+                                                <Link to={`/watch/${item && item.media_type}/${item.id}`}>
                                                     <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="" />
                                                 </Link>
                                             }

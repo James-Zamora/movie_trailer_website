@@ -23,13 +23,14 @@ const Main = () => {
                 items={trendingMovies} 
                 preview={preview} 
                 setItem={setItem}/>
-            <ContentTrending item={trendingTV.length != 0 ? trendingTV[10] : null} />
+            <ContentTrending item={trendingTV.length != 0 ? trendingTV[0] : null} />
             <ContentRow 
                 title="TRENDING TV SHOWS" 
                 items={trendingTV} 
                 preview={preview} 
                 setItem={setItem}/>
             <Preview preview={preview} item={item} />
+            <ContentTrending item={trendingMovies.length != 0 ? trendingMovies[10] : null} />
         </>
     )
 

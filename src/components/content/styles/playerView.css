@@ -9,7 +9,7 @@
 .player-view .video-wrapper {
     border-radius: 5px;
     background-color: #222222;
-    box-shadow: 0 2px 5px 0 #222222;
+    /* box-shadow: 0 2px 5px 0 #222222; */
     width: 100%;
     margin-bottom: 30px;
     height: 500px;
@@ -46,7 +46,7 @@
 }
 
 .view-info .details {
-    flex-basis: 200px;
+    width: 100%;
     text-align: end;
     font-size: 0.85rem;
 }

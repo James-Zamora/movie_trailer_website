@@ -10,7 +10,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Main/>} />
-          <Route path='/watch/:id' element={<View/>} />
+          <Route path='/watch/:type/:id' element={<View/>} />
         </Routes>
         <Footer/>
       </Router>

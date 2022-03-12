@@ -15,10 +15,8 @@ const View = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        getMovieVideos(params.id).then(res => { setTrailers(res); setTrailer(res[0]) })
-        getMovieById(params.id).then(res => { setMovie(res) })
-        console.log(movie)
-
+        getMovieVideos(params.id, params.type).then(res => { setTrailers(res); setTrailer(res[0]) })
+        getMovieById(params.id, params.type).then(res => { setMovie(res) })
     }, [])
 
     return (
