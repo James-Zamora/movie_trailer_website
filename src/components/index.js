@@ -6,6 +6,8 @@ import ContentRow from './content/ContentRow'
 import ContentTrending from './content/ContentTrending'
 import PlayerView from './content/PlayerView'
 import ContentGrid from './content/ContentGrid'
+import VideoRow from './content/VideoRow'
+import Details from './content/Details'
 
 export {
     Header,
@@ -16,4 +18,6 @@ export {
     ContentTrending,
     PlayerView,
     ContentGrid,
+    VideoRow,
+    Details,
 }
