@@ -7,6 +7,7 @@
 
 .search-form select {
     height: 50px;
+    width: 120px;
     font-size: 1rem;
     flex-grow: 0;
     border-top-left-radius: 5px;
@@ -28,6 +29,7 @@
     padding: 15px;
     flex-grow: 1;
     max-width: 600px;
+    min-width: 50px;
 }
 
 .search-form button {
@@ -39,4 +41,23 @@
 
 .search-form input:focus {
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+    }
+    .search-form select {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .search-form input {
+        border-radius: 5px;
+        margin: 15px 0;
+        width: 100%;
+    }
+    .search-form button {
+        border-radius: 5px;
+        width: 100%;
+    }
 }

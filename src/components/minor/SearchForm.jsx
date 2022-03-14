@@ -20,7 +20,7 @@ const SearchForm = ({ setItems, setIsLoading, setType, type }) => {
                 <option value="movie">Movie</option>
                 <option value="tv">TV Show</option>
             </select>
-            <input type="text" maxLength="20" placeholder={`Search by ${type} name`} value={searchText} onChange={(e) => setSearchText(e.currentTarget.value)} />
+            <input type="text" maxLength="80" placeholder={`Search by ${type} name`} value={searchText} onChange={(e) => setSearchText(e.currentTarget.value)} />
             <button className="btn btn-danger" onClick={search}>Search</button>
         </section>
     )
