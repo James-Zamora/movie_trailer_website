@@ -46,7 +46,7 @@ const ContentColumn = ({ preview, setItem,  }) => {
 
     return (
         <>
-        <h1>SIMILAR</h1>
+        {items && <h1>MORE LIKE IT</h1>}
         <section className="content-column">
             {items ?
                 <>
