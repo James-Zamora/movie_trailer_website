@@ -46,7 +46,7 @@ const ContentColumn = ({ preview, setItem,  }) => {
 
     return (
         <>
-        {items.length > 0 && <h1>MORE LIKE IT</h1>}
+        {items && items.length > 0 && <h1>MORE LIKE IT</h1>}
         <section className="content-column">
             {items ?
                 <>
