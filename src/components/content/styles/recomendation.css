@@ -1,5 +1,6 @@
 .content-column {
     padding-top: 15px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,7 +12,6 @@
     width: 100%;
     margin-bottom: 15px;
     color: #ffffff;
-    background: #222222;
     text-decoration: none;
     box-shadow: 0 2px 5px 0 #222222;
     border-radius: 5px;
@@ -27,28 +27,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px 0px 15px;
+    padding: 10px 15px 15px 15px;
 }
 
-.content-column .card .details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 15px 10px 15px;
-    opacity: 75%;
-}
-
-.content-column .card .details span {
-    height: 20px;
-    width: 2px;
-    margin: 0 10px;
-    background: #ffffffbf;
-}
-
-.content-column .card .details h3:nth-of-type(3) {
-    border: 2px solid #ffffffbf;
-    border-radius: 5px;
-    padding: 2px 5px;
+.content-column .card .title h3 {
+    text-align: end;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .content-column .card img {
@@ -56,13 +41,25 @@
     border-top-right-radius: 5px;
     object-fit: cover;
     width: 100%;
-    height: 300px;
+    height: 500px;
 }
 
 .content-column h2 {
+    font-weight: 400;
     font-size: 1rem;
 }
 
 .content-column h3 {
     font-size: 0.70rem;
+}
+
+@media (max-width: 786px) {
+    .content-column .card .title {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .content-column .card .title h3 {
+        text-align: center;
+    }
 }

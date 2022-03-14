@@ -10,13 +10,23 @@ const getTrendingMovies = async () => {
     return responce.data.results
 }
 
-const getMovieVideos= async (id, type) => {
+const getMovieVideos = async (id, type) => {
     const responce = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/videos?api_key=7c22573a9bc36e843de16a41601db91f`)
     return responce.data.results
 }
 
-const getMovieById= async (id, type) => {
+const getMovieById = async (id, type) => {
     const responce = await axios.get(`https://api.themoviedb.org/3/${type}/${id}?api_key=7c22573a9bc36e843de16a41601db91f`)
+    return responce.data
+}
+
+const getRecomendations = async (id, type) => {
+    const responce = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/recommendations?api_key=7c22573a9bc36e843de16a41601db91f`)
+    return responce.data
+}
+
+const getSearch = async (query, type) => {
+    const responce = await axios.get(`https://api.themoviedb.org/3/search/${type}/?query=${query}&include_adult=ture&api_key=7c22573a9bc36e843de16a41601db91f`)
     return responce.data
 }
 
@@ -24,5 +34,7 @@ export {
     getTrendingMovies,
     getTrendingTV,
     getMovieVideos,
-    getMovieById
+    getMovieById,
+    getRecomendations,
+    getSearch
 }

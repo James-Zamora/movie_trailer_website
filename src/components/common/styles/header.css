@@ -86,6 +86,12 @@ header .container p {
     font-size: 1rem;
 }
 
+nav svg {
+    fill: #ffffff;
+    width: 15px;
+    margin-right: 10px;
+}
+
 @media (max-width: 478px) {
 
     header .container {

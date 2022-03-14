@@ -13,17 +13,11 @@ const Details = ({ movie }) => {
                     </p>
                 </div>
                 <div className="details">
-                    <h3>
-                        { movie.release_date ?  movie.release_date : "Last Air Date: " + movie.last_air_date }
-                    </h3>
-                    { movie.last_air_date && 
-                        <h3>
-                            { 'Last Eposide: ' + movie.last_episode_to_air.episode_number }
-                        </h3>
-                    }
+                    <h3>{ movie.release_date ?  movie.release_date : "Last Air Date: " + movie.last_air_date }</h3>
+                    { movie.last_air_date && <h3><strong>Last Eposide: </strong>{ movie.last_episode_to_air.episode_number } </h3> }
                     { movie.first_air_date && 
-                        <h3>
-                            { "First Air Date: " + movie.first_air_date }
+                        <h3><strong>First Air Date: </strong>
+                            { movie.first_air_date }
                         </h3>
                     }
                     {movie.adult &&

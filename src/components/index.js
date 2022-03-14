@@ -5,9 +5,11 @@ import Preview from './content/Preview'
 import ContentRow from './content/ContentRow'
 import ContentTrending from './content/ContentTrending'
 import PlayerView from './content/PlayerView'
-import ContentGrid from './content/ContentGrid'
+import Recomendation from './content/Recomendation'
 import VideoRow from './content/VideoRow'
 import Details from './content/Details'
+import SearchForm from './minor/SearchForm'
+import SearchResults from './content/SearchResults'
 
 export {
     Header,
@@ -17,7 +19,9 @@ export {
     ContentRow,
     ContentTrending,
     PlayerView,
-    ContentGrid,
+    Recomendation,
     VideoRow,
     Details,
+    SearchForm,
+    SearchResults,
 }

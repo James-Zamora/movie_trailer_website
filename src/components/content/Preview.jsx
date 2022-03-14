@@ -10,6 +10,7 @@ const Preview = ({ item, preview }) => {
 
     useEffect(() => {
         if(item) {
+            console.log(item)
             setTrailer(null)
             getMovieVideos(item.id, item.media_type).then(res => setTrailer(res[0].key))
         }

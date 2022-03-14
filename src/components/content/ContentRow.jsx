@@ -17,21 +17,24 @@ const ContentRow = ({ title, items, preview, setItem }) => {
 
     const onMouseEnterPreview = (e, item) => {
 
-        const previewWidth = (preview.current.offsetWidth - e.currentTarget.offsetWidth) / 2
+        preview.current.removeAttribute('active')
+        if(window.innerWidth > 786) {
+            // Set width to preview element to width of target element + 100px to make it bigger
+            preview.current.style.width = `${e.currentTarget.offsetWidth + 100}px`;
+        }
         const previewHeight = (preview.current.offsetHeight - e.currentTarget.offsetHeight) / 2
-        const offsetTop = e.currentTarget.offsetTop - previewWidth
+        // Align preview element
+        const offsetTop = e.currentTarget.offsetTop - (preview.current.offsetHeight - e.currentTarget.offsetHeight) / 2
         const offsetLeft = e.currentTarget.getBoundingClientRect().left - previewHeight
-        
+
         setDelayHandler(setTimeout(() => {
             setItem(item)
-            if(preview.current)  {
-                preview.current.style.top = `${offsetTop}px`
-                window.innerWidth <= 786 ? 
-                    preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
-                : 
-                    preview.current.style.left = `${offsetLeft}px`
-                preview.current.setAttribute('active', 'true')
-            }
+            preview.current.style.top = `${offsetTop}px`
+            window.innerWidth <= 786 ? 
+                preview.current.style.left = `${window.innerWidth - (window.innerWidth / 2 + preview.current.offsetWidth / 2)}px`
+            : 
+                preview.current.style.left = `${offsetLeft}px`
+            preview.current.setAttribute('active', '')
         }, window.innerWidth <= 786 ? 100 : 1000))
 
     }

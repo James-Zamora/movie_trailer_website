@@ -1,8 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { PlayerView, ContentGrid, Preview, VideoRow, Details } from '../components'
+import { PlayerView, Recomendation, Preview, VideoRow, Details } from '../components'
 import { getMovieVideos, getMovieById } from '../actions/movie'
-import './styles/view.css'
 
 const View = () => {
     const preview = useRef()
@@ -15,9 +14,9 @@ const View = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        getMovieVideos(params.id, params.type).then(res => { setTrailers(res); setTrailer(res[0]); console.log(res[0]) })
+        getMovieVideos(params.id, params.type).then(res => { setTrailers(res); setTrailer(res[0]); })
         getMovieById(params.id, params.type).then(res => { setMovie(res) })
-    }, [])
+    }, [params])
 
     return (
         <div className="container">
@@ -27,7 +26,8 @@ const View = () => {
                 {trailers && trailers.length > 1 &&
                     <VideoRow trailers={trailers} setTrailer={setTrailer} />
                 }
-                {/* <Preview preview={preview} item={item} /> */}
+                <Recomendation preview={preview} setItem={setItem} />
+                <Preview preview={preview} item={item} />
             </div>
         </div>
     )

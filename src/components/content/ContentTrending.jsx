@@ -8,8 +8,8 @@ const ContentTrending = ({item}) => {
     
     window.addEventListener('scroll', () => {
         if(bgImage.current) {
-            let scrolled = bgImage.current.offsetParent.parentElement.getBoundingClientRect().bottom - bgImage.current.clientHeight;
-            bgImage.current.style.transform = `translateY(${(scrolled * 0.1 )}px)`
+            let scrolled = bgImage.current.offsetParent.parentElement.getBoundingClientRect().bottom - bgImage.current.clientHeight-100;
+            bgImage.current.style.transform = `translateY(${(scrolled * 0.05 )}px)`
         }
     });
 
@@ -21,7 +21,8 @@ const ContentTrending = ({item}) => {
                 <div className="content-trending">
                     <div className="img-wrapper">
                         <img ref={bgImage} src={item.poster_path != '' ? 'https://image.tmdb.org/t/p/w1280'+item.poster_path : "https://assets.nflxext.com/ffe/siteui/vlv3/1691099b-ff71-4321-bd54-1bba46b0886b/2c85b161-6a67-445b-a029-3861905f047d/US-en-20220228-popsignuptwoweeks-perspective_alpha_website_large.jpg"} alt="" />
-                        <div className="concord-img-gradient"></div>
+                        <div className="concord-img-gradient g-90"></div>
+                        <div className="concord-img-gradient g-180"></div>
                     </div>
                     <div className="info">
                             {item.release_date ? 

@@ -1,5 +1,5 @@
 .preview {
-    height: 450px;
+    height: 600px;
     width: 350px;
     border-radius: 5px;
     background-color: #181818;
@@ -24,7 +24,7 @@
 
 .preview .video {
     width: 100%;
-    height: 350px;
+    height: 500px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: #0e0e0e;
@@ -35,7 +35,7 @@
 
 .preview iframe {
     width: 100%;
-    height: 350px;
+    height: 500px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border: none;
@@ -85,7 +85,7 @@
 
 @media (max-width: 478px) {
     .preview {
-        height: 400px;
+        height: 600px;
         width: 90%;
         margin: 0 auto;
     }

@@ -19,10 +19,10 @@ const VideoRow = ({ trailers, setTrailer }) => {
                 className="video-row-container"
                 ref={videoRow}
                 onWheel={onWheel}>
-                {trailers.map((item) => {
+                {trailers.map((item, index) => {
                     if(item.official) {
                         return (
-                            <div className="card" onClick={() => {setTrailer(item); window.scrollTo(0, 0)}}>
+                            <div key={`trailers-${index}`} className="card" onClick={() => {setTrailer(item); window.scrollTo(0, 0)}}>
                                 <img src={ `https://img.youtube.com/vi/${item.key}/0.jpg`} alt="Thumbnail" />
                                 <h3>
                                     {item.name}

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Main, View } from './pages'
+import { Main, View, Search } from './pages'
 import { Footer, Navbar } from './components'
 import './style.css'
 
@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>} />
           <Route path='/watch/:type/:id' element={<View/>} />
+          <Route path='/search' element={<Search/>} />
         </Routes>
         <Footer/>
       </Router>
